@@ -1,0 +1,55 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+.env/
+.env.bak/
+.venv/
+
+# FastAPI logs or temporary files
+*.log
+*.pid
+
+# TensorFlow / Keras model files
+*.h5
+*.keras
+*.pb
+*.ckpt
+saved_model/
+checkpoints/
+models/
+
+# Jupyter/Colab related
+.ipynb_checkpoints/
+*.ipynb
+
+# VS Code
+.vscode/
+
+# PyCharm
+.idea/
+
+# Mac OS
+.DS_Store
+
+# Pytest / coverage
+htmlcov/
+.tox/
+.nox/
+.coverage
+coverage.xml
+.cache
+.pytest_cache/
+
+# MyPy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Build / dist
+build/
+dist/
+*.egg-info/
