@@ -159,7 +159,7 @@ async def predict_image(file: UploadFile = File(...)):
         logger.error(f"Prediction failed: {str(e)}")
         raise HTTPException(status_code=500, detail=f"Prediction failed: {str(e)}")
 
-# --- Health Check Endpoint ---
+# --- Health Check Endpoint ----
 @app.get("/health", summary="Check API Health")
 async def health_check():
     return {"status": "API is running"}
