@@ -1,8 +1,8 @@
 from fastapi import FastAPI, UploadFile, File, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
-from tensorflow.keras.models import load_model, Model
-from tensorflow.keras.preprocessing import image as keras_image
+from keras.models import load_model, Model
+from keras.preprocessing import image as keras_image
 from pydantic import BaseModel
 from typing import Literal
 import numpy as np
