@@ -13,6 +13,7 @@ import cv2
 import base64
 from imghdr import what as detect_image_type
 import logging
+from mangum import Mangum
 
 # --- Logging Setup ---
 logging.basicConfig(level=logging.INFO)
@@ -31,12 +32,12 @@ Also returns a **Grad-CAM heatmap** as base64 to visualize model focus.
 """,
     version="1.0.0",
     contact={
-        "name": "Mahmoud Elkholy",
-        "email": "deepfake017@gmail.com",
+        "name": "Sara Hendawy",
+        "email": "sarahendawy50@gmail.com",
     },
     license_info={
-        "name": "MIT",
-        "url": "https://opensource.org/licenses/MIT",
+        "name": "Sadat Academy for Managments and Sciences",
+        "url": "http://www.sams.edu.eg/en/",
     },
 )
 
@@ -159,7 +160,10 @@ async def predict_image(file: UploadFile = File(...)):
         logger.error(f"Prediction failed: {str(e)}")
         raise HTTPException(status_code=500, detail=f"Prediction failed: {str(e)}")
 
-# --- Health Check Endpoint ----
+# --- Health Check Endpoint ---
 @app.get("/health", summary="Check API Health")
 async def health_check():
     return {"status": "API is running"}
+
+# --- Mangum Handler for Vercel ---
+handler = Mangum(app)
