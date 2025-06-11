@@ -53,6 +53,7 @@ app.add_middleware(
 # --- Load Model ---
 MODEL_PATH = "model/xpose_pretrained_file.keras"
 try:
+    logger.info("Attempting to load model from: " + MODEL_PATH)
     model = load_model(MODEL_PATH)
     input_name = model.input[0].name.split(":")[0] if isinstance(model.input, list) else model.input.name.split(":")[0]
     logger.info("Model loaded successfully")
